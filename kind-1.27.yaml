@@ -1,0 +1,53 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  image: kindest/node:v1.27.3
+
+- role: worker
+  image: kindest/node:v1.27.3
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      name: cpu-node
+
+- role: worker
+  image: kindest/node:v1.27.3
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      name: gpu-node-h200
+
+- role: worker
+  image: kindest/node:v1.27.3
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      name: gpu-node-4090
+
+- role: worker
+  image: kindest/node:v1.27.3
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      name: gpu-node-h800
+
+- role: worker
+  image: kindest/node:v1.27.3
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      name: gpu-node-h800-mps
+  
+- role: worker
+  image: kindest/node:v1.27.3
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      name: gpu-node-h200-mig
