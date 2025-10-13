@@ -12,8 +12,4 @@ sh add-label-resource.sh gpu-node-h800 NVIDIA-H800
 sh add-label-resource-mps.sh gpu-node-h800-mps NVIDIA-H800
 sh add-label-resource-mig.sh gpu-node-h200-mig NVIDIA-H200
 
-# 安装volcano
-echo "installing volcano..."
-cd volcano-1.12.1 && helm install volcano . -n volcano-system --create-namespace
-
 echo "mock cluster created successfully!"

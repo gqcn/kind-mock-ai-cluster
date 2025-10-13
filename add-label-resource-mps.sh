@@ -24,7 +24,7 @@ kubectl label node ${NODE_NAME} \
     nvidia.com/gpu.compute.major=8 \
     nvidia.com/gpu.compute.minor=0 \
     nvidia.com/gpu.memory=${GPU_MEMORY} \
-    nvidia.com/gpu.clock=1410 \
+    nvidia.com/cuda.driver-version.full=535.104.05 \
     nvidia.com/gpu.driver.major=535 \
     nvidia.com/gpu.driver.minor=104 \
     nvidia.com/gpu.driver.rev=05 \
